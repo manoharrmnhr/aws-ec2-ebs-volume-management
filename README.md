@@ -38,4 +38,47 @@ lsblk
 sudo mkfs.ext4 /dev/xvdf
 sudo mkdir /data
 sudo mount /dev/xvdf /data
+```
+---
+Persistent mount:
+```
+sudo blkid /dev/xvdf
+sudo nano /etc/fstab
+```
+---
+
+4️⃣ Resize EBS Volume
+
+Modified from 20 GB → 30 GB using AWS Console
+
+Extend filesystem:
+```
+sudo resize2fs /dev/xvdf
+```
+---
+
+✅ Verification
+```
+df -h
+```
+
+---
+📷 Screenshots
+
+EC2 running
+
+Volume attached
+
+Before & after resize
+
+---
+
+🎯 Outcome
+
+Successfully managed EBS lifecycle including resizing without downtime.
+
+👤 Author
+
+Manohar R
+Cloud | DevOps | DevSecOps Engineer
 
